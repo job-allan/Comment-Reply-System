@@ -17,6 +17,8 @@ unset($_SESSION['status']);
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
+
+          
           <div class="card-header">
             <h4>This is a blog heading.</h4>
           </div>
@@ -35,6 +37,12 @@ unset($_SESSION['status']);
             <div class="main-comment">
               <textarea  class="form-control comment_textbox mb-1" rows="3"></textarea>
               <button type="submit" class="btn btn-primary add_comment_button">Comment</button>
+
+            </div>
+            <hr>
+
+            <div class="comment-container">
+
 
             </div>
 
