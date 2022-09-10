@@ -18,15 +18,12 @@ unset($_SESSION['status']);
       <div class="col-md-8">
         <div class="card">
 
-          
+
           <div class="card-header">
             <h4>This is a blog heading.</h4>
           </div>
           <div class="card-body">
-            lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem lorem ipsumloremlorem ipsum
-            lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-            lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
-            lorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsumlorem ipsum
+            God is good all the time.
 
             <hr>
             <div id="error_status">

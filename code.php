@@ -3,9 +3,28 @@
 
 
 <?php
+if(isset($_POST['add_subreplies'])){
+  $cmt_id = $_POST['cmt_id'];
+  $reply_msg = $_POST['reply_msg'];
+
+  $user_id = $_SESSION['auth_user_id'];
+
+  $query = "INSERT INTO comment_replies (user_id, comment_id, reply_msg) ";
+  $query .= "VALUES ($user_id, $cmt_id, '$reply_msg')";
+  $result = mysqli_query($connection, $query);
+
+  if($result){
+    echo "replied";
+  }else{
+    echo "Error sending reply".mysqli_error($connection);
+  }
+}
+
+
+
 if(isset($_POST['view_data'])){
-  $comment_id = $_POST['comment_id'];
-  $reply_query = "SELECT * FROM comment_replies WHERE comment_id = $comment_id";
+  $cmt = $_POST['cosmos'];
+  $reply_query = "SELECT * FROM comment_replies WHERE comment_id = $cmt";
   $reply_result = mysqli_query($connection, $reply_query);
   $result_array = [];
 
@@ -14,7 +33,7 @@ if(isset($_POST['view_data'])){
       $user_id = $row['user_id'];
       $user_query = "SELECT * FROM users WHERE id = $user_id LIMIT 1";
       $result_user = mysqli_query($connection, $user_query);
-      $user_result = mysqli_fetch_array($result_user);
+      $user_result = mysqli_fetch_assoc($result_user);
 
       array_push($result_array, ['cmt'=>$row, 'user'=>$user_result]);
 
